@@ -6,6 +6,9 @@ import Auth from '../utils/auth';
 import { QUERY_USERS } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
+import BlankCanvas from '../components/Canvas/index';
+
+
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
@@ -24,6 +27,12 @@ const Home = () => {
     return Auth.getProfile().data.username;
   }
 
+  const renderBlankCanvas = () => {
+    return (
+      <BlankCanvas />
+    )
+  }
+
   return (
     <main>
       <div>
@@ -31,6 +40,9 @@ const Home = () => {
       </div>
       <div>
         {renderUserList()}
+      </div>
+      <div>
+        {renderBlankCanvas()}
       </div>
     </main>
   );
