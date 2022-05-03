@@ -18,6 +18,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
+  },
+  badges: [
+    {
+      type: String,
+      trim: true,
+    }
+  ],
+  clicks: {
+    type: Number,
+    default: 0,
   }
 });
 

@@ -6,6 +6,8 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    badges: [String]!
+    clicks: Int
   }
 
   type Auth {
@@ -22,6 +24,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
+
+    addBadge(userId: ID!, badge: String!): User
+    addClick(userId: ID!, click: Int!): User
   }
 `;
 
