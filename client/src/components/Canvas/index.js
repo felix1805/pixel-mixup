@@ -19,9 +19,12 @@ const styles = {
 }
 
 const BlankCanvas = () => {
+  function sayHello() {
+    alert('hello');
+  }
   return (
     <div style={styles.artContainer}>
-        <button style={styles.tile} onClick={console.log('Working!')}></button>
+        <button style={styles.tile} onClick={sayHello}>Button</button>
         <button style={styles.tile}></button>
         <button style={styles.tile}></button>
         <button style={styles.tile}></button>
