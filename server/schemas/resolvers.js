@@ -40,8 +40,39 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
-};
+    },
 
+    // Adds badge to User
+    addBadge: async (parent, { userId, badge }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { badges: badge },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+    },
+
+    // Adds click to User's total clicks
+    addClick: async (parent, { userId, click }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { clicks: click },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+    },
+  }
+}
 module.exports = resolvers;
