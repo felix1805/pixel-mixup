@@ -15,6 +15,14 @@ const typeDefs = gql`
     x: String
     y: String
     color: String
+    user: User
+  }
+
+  type Canvas {
+    _id: ID
+    name: String
+    tiles: [Tile]
+    users: [User]
   }
 
   type Auth {
@@ -27,6 +35,8 @@ const typeDefs = gql`
     user(id: ID!): User
     me: User
     tiles: [Tile]
+    canvases: [Canvas]
+    canvas: Canvas
   }
 
   type Mutation {
@@ -34,6 +44,8 @@ const typeDefs = gql`
     login(email:String!, password:String!): Auth
 
     addTile(x:String!, y:String!, color:String!): Tile
+
+    addCanvas(name:String!): Canvas
 
     addBadge(userId: ID!, badge: String!): User
     addClick(userId: ID!, click: Int!): User
