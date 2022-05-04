@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Tile } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -15,6 +15,11 @@ const resolvers = {
         return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+
+    // returns all tiles
+    tiles: async () => {
+      return Tile.find();
     },
   },
 
@@ -40,6 +45,11 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    // adds single tile
+    addTile: async (parent, { x, y, color }) => {
+      return await Tile.create({ x, y, color });
     },
 
     // Adds badge to User
