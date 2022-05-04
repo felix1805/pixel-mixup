@@ -6,18 +6,30 @@ const Canvas = () => {
   const gridRef = useRef();
   const colorRef = useRef();
   const [coords, setCoords] = useState([]);
+  const [context, setContext] = useState(null);
 
   useEffect(() => {
-    console.log('change');
+    setContext(overlayRef.current.getContext('2d'));
+  }, []);
+
+  useEffect(() => {
+    if (context) {
+      context.clearRect(0, 0, overlayRef.current.width, overlayRef.current.height);
+      coords.forEach(({ x, y, color }) => {
+        context.fillStyle = color;
+        context.fillRect(x, y, 32, 32);
+      })
+    }
   }, [coords]);
+
 
   const handleImageClick = (event) => {
     console.log(overlayRef.current);
     console.log(gridRef.current);
     console.log(event);
 
-    const x = 8 * (event.nativeEvent.offsetX % 2 !== 0 ? event.nativeEvent.offsetX - event.nativeEvent.offsetX % 2 : event.nativeEvent.offsetX);
-    const y = 8 * (event.nativeEvent.offsetY % 2 !== 0 ? event.nativeEvent.offsetY - event.nativeEvent.offsetY % 2 : event.nativeEvent.offsetY);
+    const x = (event.nativeEvent.offsetX % 32 !== 0 ? event.nativeEvent.offsetX - event.nativeEvent.offsetX % 32 : event.nativeEvent.offsetX);
+    const y = (event.nativeEvent.offsetY % 32 !== 0 ? event.nativeEvent.offsetY - event.nativeEvent.offsetY % 32 : event.nativeEvent.offsetY);
 
 
     // gets the x and y position of the mouse at the time of clicking
@@ -26,11 +38,6 @@ const Canvas = () => {
     // console.log('color value', selectedColor);
 
     const color = colorRef.current.value;
-    const context = overlayRef.current.getContext('2d');
-    context.fillStyle = color;
-    context.fillRect(x, y, 16, 16);
-    console.log('context:', context);
-
 
     console.log('color:', color);
     // adds coords {x,y} to localStorage
