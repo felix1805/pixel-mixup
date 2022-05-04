@@ -6,7 +6,7 @@ import Auth from '../../utils/auth';
 const styles = {
   navbar: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
   }
 }
 

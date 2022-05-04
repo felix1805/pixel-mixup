@@ -31,9 +31,26 @@ canvas,
   pointer-events: none;
 }
 
-#grid {
+/* #grid {
   border: 1px solid black;
   background-position: 0 0;
   background-repeat: repeat;
-  /* background-image: url('./lines-again.png'); */
+  background-image: url('./lines-again.png');
+} */
+
+#grid {
+  background-image:
+      repeating-linear-gradient(0deg, black 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, black 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(180deg, black 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(270deg, black 0 1px, transparent 1px 100%);
+    background-size: 32px 32px;
+    position: 0;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    padding: 1px;
+}
+
+.border {
+  border: 1px solid black;
 }

@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Tile } = require('../models');
+const { User, Tile, Canvas } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -21,6 +21,16 @@ const resolvers = {
     tiles: async () => {
       return Tile.find();
     },
+
+    // returns all canvases
+    canvases: async () => {
+      return Canvas.find();
+    },
+
+    // returns single canvas
+    canvas: async (_, args) => {
+      return Canvas.findOne({ _id: args.id })
+    }
   },
 
   Mutation: {
@@ -52,8 +62,13 @@ const resolvers = {
       return await Tile.create({ x, y, color });
     },
 
+    // adds single canvas
+    addCanvas: async (parent, { name }) => {
+      return await Canvas.create({ name });
+    },
+
     // Adds badge to User
-    addBadge: async (parent, { userId, badge }, context) => {
+    addBadge: async (parent, { userId, badge }, context) => { 
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: userId },

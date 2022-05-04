@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const styles = {
   users: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
   }
 }
 

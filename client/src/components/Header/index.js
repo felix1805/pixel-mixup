@@ -6,6 +6,7 @@ const styles = {
   header: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
   }
 }
 
@@ -14,11 +15,10 @@ const Header = () => {
     <header style={styles.header}>
       <div>
         <Link to="/">
-          <h1>User List</h1>
+          <h1>Pixel Mixup</h1>
         </Link>
       </div>
       <div>
-        <p>Simple App to View Users.</p>
         <Navbar />
       </div>
     </header>
