@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+}
+canvas,
+#grid { 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  transform: scale(8) translate(-50%, -50%);
+  transform-origin: 0 0;
+}
+
+#grid,
+#overlay {
+  width: 512px;
+  height: 512px;
+  transform: scale(1) translate(-50%, -50%);
+}
+
+#grid {
+  pointer-events: none;
+}
+
+#grid {
+  border: 1px solid black;
+  background-position: 0 0;
+  background-repeat: repeat;
+  /* background-image: url('./lines-again.png'); */
+}

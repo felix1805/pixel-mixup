@@ -1,76 +1,51 @@
-import React from 'react';
-import styled from 'styled-components';
-// import image from '../../imgs/'
+import React, { useEffect, useRef, useState } from 'react';
+import './style.css';
 
-// const styles = {
-//   artContainer: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     position: 'relative',
-//     transform: 'scale(1)',
-//     transformOrigin: 'center center',
-//     width: '500px',
-//     height: '500px',
-//   },
-//   tile: {
-//     height: '50px',
-//     width: '50px',
-//     border: '1px solid black',
-//     backgroundColor: 'red',
-//   }
-// }
+const Canvas = () => {
+  const overlayRef = useRef();
+  const gridRef = useRef();
+  const colorRef = useRef();
+  const [coords, setCoords] = useState([]);
 
-const StyledCanvas = styled.div`
-  & body, html {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-      position: relative;
-      min-height: 100vh;
-    }
-  canvas,
-  #grid { 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 64px;
-    height: 64px;
-    transform: scale(8) translate(-50%, -50%);
-    transform-origin: 0 0;
-  }
+  useEffect(() => {
+    console.log('change');
+  }, [coords]);
 
-  #grid,
-  #overlay {
-    width: 512px;
-    height: 512px;
-    transform: scale(1) translate(-50%, -50%);
-  }
+  const handleImageClick = (event) => {
+    console.log(overlayRef.current);
+    console.log(gridRef.current);
+    console.log(event);
 
-  #overlay,
-  #grid {
-    pointer-events: none;
-  }
+    const x = 8 * (event.nativeEvent.offsetX % 2 !== 0 ? event.nativeEvent.offsetX - event.nativeEvent.offsetX % 2 : event.nativeEvent.offsetX);
+    const y = 8 * (event.nativeEvent.offsetY % 2 !== 0 ? event.nativeEvent.offsetY - event.nativeEvent.offsetY % 2 : event.nativeEvent.offsetY);
 
-  #grid {
-    border: 1px solid black;
-    background-position: 0 0;
-    background-repeat: repeat;
-    background-image: url('./lines-again.png');
-  }
-`;
 
-const BlankCanvas = () => {
+    // gets the x and y position of the mouse at the time of clicking
+    console.log("X:", event.nativeEvent.offsetX);
+    console.log("Y:", event.nativeEvent.offsetY);
+    // console.log('color value', selectedColor);
+
+    const color = colorRef.current.value;
+    const context = overlayRef.current.getContext('2d');
+    context.fillStyle = color;
+    context.fillRect(x, y, 16, 16);
+    console.log('context:', context);
+
+
+    console.log('color:', color);
+    // adds coords {x,y} to localStorage
+    setCoords(coords => [...coords, { x, y, color }]);
+    // document.body.style.backgroundColor = `rgba(${rgba.join()})`;
+  };
   return (
-    <StyledCanvas>
-      <body>
-        <canvas id="image" width="64" height="64"></canvas>
-        <canvas id="overlay" width="512" height="512"></canvas>
-        <div id="grid" width="512" height="512"></div>
-        {/* <img src={image} alt='lines'></img> */}
-      </body>
-    </StyledCanvas>
+    <>
+      <div>
+        <input ref={colorRef} id='colorSelector' type="color" />
+      </div>
+      <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
+      <div ref={gridRef} id="grid" width="512" height="512"></div>
+    </>
   )
 }
 
-export default BlankCanvas;
+export default Canvas;
