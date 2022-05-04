@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const styles = {
+  users: {
+    display: 'flex',
+    flexDirection: 'row',
+  }
+}
+
 const User = ({ _id, username }) => {
   return (
-    <div key={_id}>
+    <div key={_id} style={styles.users}>
       <h4>
         <Link to={`/users/${_id}`}>
           {username}
@@ -22,10 +29,10 @@ const UserList = ({ users, title }) => {
   }
 
   return (
-    <>
+    <div style={styles.users}>
       <h3>{title}</h3>
       {renderUsers()}
-    </>
+    </div>
   );
 };
 
