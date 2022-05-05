@@ -5,9 +5,24 @@ html, * {
   font-family: 'Noto Sans Display', sans-serif;
 }
 
+#gameboy {
+  background-image: url(../src/components/Header/background.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#artbox{
+  display: flex;
+  flex-direction: column;
+}
+
 .btn-1{
   text-decoration: none;
   color: #000;
+  border-radius: 30px;
 }
 
 .btn-1:active {
@@ -20,10 +35,8 @@ html, * {
 
 .title{
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
-  width: 75%;
-  margin-top: 2px;
-  transform: translate(16.75%);
 }
 
 .nav-btn{
@@ -50,6 +63,7 @@ html, * {
 #selector-container{
 display: flex;
 justify-content: center;
+margin-bottom: 20px;
 }
 
 #color-selector{
