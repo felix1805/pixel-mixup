@@ -78,13 +78,13 @@ const Canvas = () => {
 
   };
   return (
-    <>
+    <div id="artbox">
       <div id="selector-container">
         <input ref={colorRef} id='color-selector' type="color" />
       </div>
       <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
       <div ref={gridRef} id="grid" width="512" height="512"></div>
-    </>
+    </div>
   )
 }
 

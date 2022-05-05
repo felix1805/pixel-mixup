@@ -8,8 +8,6 @@ import { QUERY_USERS } from '../utils/queries';
 import UserList from '../components/UserList';
 import BlankCanvas from '../components/Canvas/index';
 
-
-
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const users = data?.users || [];
