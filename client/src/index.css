@@ -1,25 +1,48 @@
-html, * {
+html,
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Noto Sans Display', sans-serif;
+  
+}
+
+#pixelLetter {
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  background-color: #c5c0bd;
 }
 
 #gameboy {
   background-image: url(../src/components/Header/background.png);
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
-#artbox{
+#gameboy:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to top, rgba(197,192,189),rgba(127, 127, 127, 0.01) 20%);
+  width: 100%;
+  height: 4em;
+}
+
+#artbox {
   display: flex;
   flex-direction: column;
 }
 
-.btn-1{
+.btn-1 {
   text-decoration: none;
   color: #000;
   border-radius: 30px;
@@ -29,17 +52,17 @@ html, * {
   color: rgb(140, 140, 140) !important;
 }
 
-.headLink:visited{
+.headLink:visited {
   color: transparent;
 }
 
-.title{
+.title {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
 }
 
-.nav-btn{
+.nav-btn {
   text-decoration: none;
   margin: 3px;
   font-size: 15px;
@@ -48,7 +71,7 @@ html, * {
   color: #000;
 }
 
-.btn-border{
+.btn-border {
   width: fit-content;
   margin-left: 3px;
   margin-right: 5px;
@@ -56,17 +79,17 @@ html, * {
   box-shadow: 0 0 5px #8D99AE;
 }
 
-.btn-border:active{
+.btn-border:active {
   box-shadow: 0 0 2px #8D99AE;
 }
 
-#selector-container{
-display: flex;
-justify-content: center;
-margin-bottom: 20px;
+#selector-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-#color-selector{
+#color-selector {
   width: 100px;
   cursor: pointer;
 }
