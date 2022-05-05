@@ -2,4 +2,57 @@ html, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
+.btn-1{
+  text-decoration: none;
+  color: #000;
+}
+
+.btn-1:active {
+  color: rgb(140, 140, 140) !important;
+}
+
+.headLink:visited{
+  color: transparent;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  margin-top: 2px;
+  transform: translate(16.75%);
+}
+
+.nav-btn{
+  text-decoration: none;
+  margin: 3px;
+  font-size: 15px;
+  text-align: center;
+  align-self: center;
+  color: #000;
+}
+
+.btn-border{
+  width: fit-content;
+  margin-left: 3px;
+  margin-right: 5px;
+  margin-top: 3px;
+  box-shadow: 0 0 5px #8D99AE;
+}
+
+.btn-border:active{
+  box-shadow: 0 0 2px #8D99AE;
+}
+
+#selector-container{
+display: flex;
+justify-content: center;
+}
+
+#color-selector{
+  width: 100px;
+  cursor: pointer;
 }
