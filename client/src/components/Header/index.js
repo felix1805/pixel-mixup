@@ -13,8 +13,8 @@ const styles = {
 const Header = () => {
   return (
     <header style={styles.header}>
-      <div>
-        <Link to="/">
+      <div class="title">
+        <Link to="/" class="btn-1">
           <h1>Pixel Mixup</h1>
         </Link>
       </div>
