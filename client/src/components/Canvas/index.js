@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './style.css';
+import { useMutation, useQuery } from '@apollo/client';
+import { ADD_TILE } from '../../utils/mutations';
+import { GET_TILES } from '../../utils/queries';
 
 const Canvas = () => {
+  const { data, loading } = useQuery(GET_TILES);
+  const tiles = data?.tiles || [];
+
   const overlayRef = useRef();
   const gridRef = useRef();
   const colorRef = useRef();
-  const [coords, setCoords] = useState([]);
+  // const [coords, setCoords] = useState([]);
   const [context, setContext] = useState(null);
+
 
   useEffect(() => {
     setContext(overlayRef.current.getContext('2d'));
@@ -15,15 +22,31 @@ const Canvas = () => {
   useEffect(() => {
     if (context) {
       context.clearRect(0, 0, overlayRef.current.width, overlayRef.current.height);
-      coords.forEach(({ x, y, color }) => {
+      tiles.forEach(({ x, y, color }) => {
         context.fillStyle = color;
         context.fillRect(x, y, 32, 32);
       })
     }
-  }, [coords]);
+  }, [tiles, context]);
 
+  const [addTile, {error}] = useMutation(ADD_TILE, {
+    update(cache, { data: { addTile } }) {
+      try {
+        const { tiles } = cache.readQuery({ query: GET_TILES });
 
-  const handleImageClick = (event) => {
+        cache.writeQuery({
+          query: GET_TILES,
+          data: { tiles: [...tiles, addTile] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+
+  const handleImageClick = async (event) => {
+    event.preventDefault();
+
     console.log(overlayRef.current);
     console.log(gridRef.current);
     console.log(event);
@@ -41,8 +64,18 @@ const Canvas = () => {
 
     console.log('color:', color);
     // adds coords {x,y} to localStorage
-    setCoords(coords => [...coords, { x, y, color }]);
+    try {
+      const { data } = await addTile({
+        variables: { x, y, color }, 
+      });
+
+      // window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+    // setCoords(coords => [...coords, { x, y, color }]);
     // document.body.style.backgroundColor = `rgba(${rgba.join()})`;
+
   };
   return (
     <>

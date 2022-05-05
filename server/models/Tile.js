@@ -3,11 +3,11 @@ const { User, Canvas } = require('./index');
 
 const tileSchema = new Schema({
   x: {
-    type: String,
+    type: Number,
     required: true,
   },
   y: {
-    type: String,
+    type: Number,
     required: true,
   },
   color: {
@@ -17,6 +17,10 @@ const tileSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
+  },
+  canvas: {
+    type: Schema.Types.ObjectId,
+    ref: 'Canvas'
   },
 });
 

@@ -12,8 +12,8 @@ const typeDefs = gql`
 
   type Tile {
     _id: ID
-    x: String
-    y: String
+    x: Int
+    y: Int
     color: String
     user: User
   }
@@ -43,7 +43,7 @@ const typeDefs = gql`
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
 
-    addTile(x:String!, y:String!, color:String!): Tile
+    addTile(x:Int!, y:Int!, color:String!): Tile
 
     addCanvas(name:String!): Canvas
 
