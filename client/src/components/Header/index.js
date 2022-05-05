@@ -11,37 +11,37 @@ const Header = () => {
         <Link style={{ backgroundColor: 'grey' }} to="/" class="btn-1">
           <div style={{ padding: '10px' }}>
             <h1>
-              <span style={{ color: 'red', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'red', marginRight: '3px' }}>
                 P
               </span>
-              <span style={{ color: 'yellow', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'yellow', marginRight: '3px' }}>
                 I
               </span>
-              <span style={{ color: 'blue', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'blue', marginRight: '3px' }}>
                 X
               </span>
-              <span style={{ color: 'green', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'green', marginRight: '3px' }}>
                 E
               </span>
-              <span style={{ color: 'orange', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'orange', marginRight: '3px' }}>
                 L
               </span>
               <span>
-                🕹️
+              🕹️
               </span>
-              <span style={{ color: 'purple', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'purple', marginRight: '3px', marginLeft: '5px' }}>
                 M
               </span>
-              <span style={{ color: 'red', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'red', marginRight: '3px' }}>
                 I
               </span>
-              <span style={{ color: 'yellow', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'yellow', marginRight: '3px' }}>
                 X
               </span>
-              <span style={{ color: 'blue', marginRight: '3px' }}>
+              <span id="pixelLetter" style={{ color: 'blue', marginRight: '3px' }}>
                 U
               </span>
-              <span style={{ color: 'green' }}>
+              <span id="pixelLetter" style={{ color: 'green' }}>
                 P
               </span>
             </h1>
