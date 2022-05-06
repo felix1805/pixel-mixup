@@ -50,7 +50,7 @@ const Login = () => {
     }
     return (
       <div class="bezel">
-        <div class="login-screen">
+        <div class="form-screen">
           <form onSubmit={handleFormSubmit}>
             <input
               placeholder="Your email"
@@ -77,8 +77,8 @@ const Login = () => {
 
   return (
     <main>
-      <div class="login-container">
-        <div class="login-bezel">
+      <div class="form-container">
+        <div class="form-bezel">
           <div class="screen">
             <h4>Login</h4>
             {renderForm()}

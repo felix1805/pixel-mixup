@@ -101,7 +101,7 @@ body {
   align-items: center;
 }
 
-.login-bezel {
+.form-bezel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,7 +114,7 @@ body {
   border-radius: 10px;
   /* max-width: 500px; */
 }
-.login-container {
+.form-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,21 +128,21 @@ body {
   flex-direction: column;
   height: 200px;
 }
-.login-screen form {
+.form-screen form {
   display: flex;
   flex-direction: column;
   padding: 25px;
 }
-.login-screen form input {
+.form-screen form input {
   background-color: rgb(128, 128, 128, 0.5);
   margin: 5px
 }
-.login-screen form input::placeholder {
+.form-screen form input::placeholder {
   color: white;
   font-family: 'Oxygen', sans-serif;
   font-weight: bold;
 }
-.login-screen form button {
+.form-screen form button {
   background-color: #992154;
   color: rgb(0, 0, 0);
   font-family: 'Oxygen', sans-serif;
