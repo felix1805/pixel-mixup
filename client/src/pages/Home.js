@@ -37,9 +37,6 @@ const Home = () => {
         {renderUsername()}
       </div>
       <div>
-        {renderUserList()}
-      </div>
-      <div>
         {renderBlankCanvas()}
       </div>
     </main>
