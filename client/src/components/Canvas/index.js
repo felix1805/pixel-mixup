@@ -67,8 +67,9 @@ const Canvas = () => {
     console.log('color:', color);
     // adds coords {x,y} to localStorage
     try {
+      console.log(canvasId);
       const { data } = await addTile({
-        variables: { x, y, color }, 
+        variables: { x, y, color, canvasId }, 
       });
 
       // window.location.reload();

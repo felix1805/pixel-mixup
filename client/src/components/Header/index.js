@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <header id="gameboy">
       <div></div>
-      <div class="title">
-        <Link style={{ backgroundColor: 'grey' }} to="/" class="btn-1">
+      <div className="title">
+        <Link style={{ backgroundColor: 'grey' }} to="/" className="btn-1">
           <div style={{ padding: '10px' }}>
             <h1>
               <span id="pixelLetter" style={{ color: 'red', marginRight: '3px' }}>

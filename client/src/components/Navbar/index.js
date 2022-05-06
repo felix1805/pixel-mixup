@@ -21,10 +21,10 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <div style={styles.navbar}>
-        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px', transform: 'rotate(15deg)', marginBottom: '20px'}} class="btn-border nav-btn btn-1" to="/me">
+        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px', transform: 'rotate(15deg)', marginBottom: '20px'}} className="btn-border nav-btn btn-1" to="/me">
           MY PROFILE
         </Link>
-        <button class="btn-border nav-btn btn-1" style={{ transform: 'rotate(15deg)', backgroundColor: '#992154', padding: '10px', borderRadius: '15px', marginBottom: '20px', cursor: 'pointer'}} onClick={logout}>
+        <button className="btn-border nav-btn btn-1" style={{ transform: 'rotate(15deg)', backgroundColor: '#992154', padding: '10px', borderRadius: '15px', marginBottom: '20px', cursor: 'pointer'}} onClick={logout}>
           LOGOUT
         </button>
       </div>
@@ -33,13 +33,13 @@ function Navbar() {
   // If logged out show login controls
   return (
     <div style={styles.navbar}>
-      <div class="btn-border" style={{ transform: 'rotate(15deg)'}}>
-        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px'}} class="nav-btn btn-1" to="/login">
+      <div className="btn-border" style={{ transform: 'rotate(15deg)'}}>
+        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px'}} className="nav-btn btn-1" to="/login">
           LOGIN
         </Link>
       </div>
-      <div class="btn-border" style={{ transform: 'rotate(15deg)'}}>
-        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px' }}class="nav-btn btn-1" to="/signup">
+      <div className="btn-border" style={{ transform: 'rotate(15deg)'}}>
+        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px' }}className="nav-btn btn-1" to="/signup">
           SIGNUP
         </Link>
       </div>
