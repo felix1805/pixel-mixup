@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './style.css';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_TILE } from '../../utils/mutations';
 import { GET_TILES } from '../../utils/queries';
 
 const Canvas = () => {
+  const { canvasId } = useParams();
   const { data, loading } = useQuery(GET_TILES);
   const tiles = data?.tiles || [];
 

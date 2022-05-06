@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_CANVAS } from '../utils/mutations';
 // Components
 import UserList from '../components/UserList';
 
@@ -26,20 +27,15 @@ const Profile = () => {
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-    return <Navigate to="/me" replace />;
+    return <Navigate to="/" replace />;
+  }
+
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/login" replace />;
   }
 
   if (loading) {
     return <h4>Loading...</h4>;
-  }
-
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
   }
 
   const renderUserList = () => {

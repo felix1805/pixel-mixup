@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { User, Canvas } = require('./index');
 
 const tileSchema = new Schema({
   x: {
