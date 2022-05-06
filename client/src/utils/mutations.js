@@ -27,10 +27,14 @@ export const ADD_USER = gql`
 export const ADD_TILE = gql`
 mutation addTile($x: Int!, $y: Int!, $color: String!, $canvasId: ID!) {
   addTile(x: $x, y: $y, color: $color, canvasId: $canvasId) {
+     _id
      x
      y
      color
-     _id
+     user {
+      _id
+      username
+     }
     }
   }
 `;

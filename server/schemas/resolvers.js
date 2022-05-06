@@ -18,8 +18,8 @@ const resolvers = {
     },
 
     // returns all tiles
-    tiles: async () => {
-      return Tile.find();
+    tiles: async (parent, args) => {
+      return Tile.find(args);
     },
 
     // returns all canvases
@@ -30,7 +30,9 @@ const resolvers = {
     // returns single canvas
     canvas: async (_, args) => {
       return Canvas.findOne({ _id: args.id })
-    }
+    },
+
+    
   },
 
   Mutation: {
@@ -57,11 +59,12 @@ const resolvers = {
       return { token, user };
     },
 
+
     // adds single tile
     addTile: async (parent, { x, y, color, canvasId }, context) => {
 
       const tile = await Tile.create({ x, y, color, canvasId, user: context?.user });
-      const addedTile = await Canvas.findOneAndUpdate(
+      const canvas = await Canvas.findOneAndUpdate(
         { _id: canvasId },
         {
 
@@ -71,8 +74,11 @@ const resolvers = {
           new: true,
           runValidators: true,
         }
-      );
-      return addedTile;
+      ).populate("tiles").populate({
+        path: 'tiles',
+        populate: 'user'
+      });
+      return canvas.tiles;
     },
 
     // adds single canvas

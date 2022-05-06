@@ -8,6 +8,8 @@ import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 import CanvasForm from '../components/CanvasForm';
+import { FallingLines } from 'react-loader-spinner';
+
 
 const Profile = () => {
   const { id } = useParams();
@@ -35,7 +37,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <h4>Loading...</h4>;
+    return <FallingLines width="110" color="#c8553d" />;
   }
 
   const renderUserList = () => {
