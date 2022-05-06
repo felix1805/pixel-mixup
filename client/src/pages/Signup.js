@@ -40,13 +40,14 @@ const Signup = () => {
   const renderForm = () => {
     if (data) {
       return (
-      <p>
-        Success! You may now head{' '}
-        <Link to="/">back to the homepage.</Link>
-      </p>
+        <p>
+          Success! You may now head{' '}
+          <Link to="/">back to the homepage.</Link>
+        </p>
       )
-    } 
+    }
     return (
+      
       <form onSubmit={handleFormSubmit}>
         <input
           placeholder="Your username"
@@ -78,12 +79,17 @@ const Signup = () => {
 
   return (
     <main>
-      <h4>Sign Up</h4>
-      <div>
-        {renderForm()}
-        {error && <div>{error.message}</div>}
+      <div class="container">
+        <div class="bezel">
+          <div class="screen"></div>
+          <div>
+          <h4>Sign Up</h4>
+            {renderForm()}
+            {error && <div>{error.message}</div>}
+          </div>
+        </div>
       </div>
-    </main>
+    </main >
   );
 };
 

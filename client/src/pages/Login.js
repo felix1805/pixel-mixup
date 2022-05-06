@@ -47,36 +47,44 @@ const Login = () => {
           <Link to="/">back to the homepage.</Link>
         </p>
       )
-    } 
+    }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
-      </form>
+      <div class="bezel">
+        <div class="login-screen">
+          <form onSubmit={handleFormSubmit}>
+            <input
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <button type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     );
   };
 
   return (
     <main>
-      <h4>Login</h4>
-      <div>
-        {renderForm()}
-        {error && <div>{error.message}</div>}
+      <div class="login-container">
+        <div class="login-bezel">
+          <div class="screen">
+            <h4>Login</h4>
+            {renderForm()}
+            {error && <div>{error.message}</div>}
+          </div>
+        </div>
       </div>
     </main>
   );

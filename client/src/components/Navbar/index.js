@@ -35,12 +35,12 @@ function Navbar() {
     <div style={styles.navbar}>
       <div class="btn-border" style={{ transform: 'rotate(15deg)'}}>
         <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px'}} class="nav-btn btn-1" to="/login">
-          Login
+          LOGIN
         </Link>
       </div>
       <div class="btn-border" style={{ transform: 'rotate(15deg)'}}>
         <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px' }}class="nav-btn btn-1" to="/signup">
-          Signup
+          SIGNUP
         </Link>
       </div>
     </div>
