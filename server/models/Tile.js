@@ -17,7 +17,7 @@ const tileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  canvas: {
+  canvasId: {
     type: Schema.Types.ObjectId,
     ref: 'Canvas'
   },

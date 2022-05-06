@@ -58,9 +58,21 @@ const resolvers = {
     },
 
     // adds single tile
-    addTile: async (parent, { x, y, color, canvas }, context) => {
+    addTile: async (parent, { x, y, color, canvasId }, context) => {
 
-      return await Tile.create({ x, y, color, canvas, user: context?.user });
+      const tile = await Tile.create({ x, y, color, canvasId, user: context?.user });
+      const addedTile = await Canvas.findOneAndUpdate(
+        { _id: canvasId },
+        {
+
+          $addToSet: { tiles: tile._id },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      return addedTile;
     },
 
     // adds single canvas
@@ -69,7 +81,7 @@ const resolvers = {
     },
 
     // Adds badge to User
-    addBadge: async (parent, { userId, badge }, context) => { 
+    addBadge: async (parent, { userId, badge }, context) => {
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: userId },

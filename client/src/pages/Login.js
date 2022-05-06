@@ -49,8 +49,8 @@ const Login = () => {
       )
     }
     return (
-      <div class="bezel">
-        <div class="form-screen">
+      <div className="bezel">
+        <div className="form-screen">
           <form onSubmit={handleFormSubmit}>
             <input
               placeholder="Your email"
@@ -77,9 +77,9 @@ const Login = () => {
 
   return (
     <main>
-      <div class="form-container">
-        <div class="form-bezel">
-          <div class="screen">
+      <div className="form-container">
+        <div className="form-bezel">
+          <div className="screen">
             <h4>Login</h4>
             {renderForm()}
             {error && <div>{error.message}</div>}

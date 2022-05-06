@@ -44,7 +44,7 @@ const typeDefs = gql`
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
 
-    addTile(canvas:ID!, x:Int!, y:Int!, color:String!): Canvas
+    addTile(canvasId:ID!, x:Int!, y:Int!, color:String!): Canvas
 
     addCanvas(name:String!): Canvas
 

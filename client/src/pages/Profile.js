@@ -5,9 +5,9 @@ import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
-import { ADD_CANVAS } from '../utils/mutations';
 // Components
 import UserList from '../components/UserList';
+import CanvasForm from '../components/CanvasForm';
 
 const Profile = () => {
   const { id } = useParams();
@@ -55,6 +55,10 @@ const Profile = () => {
     );
   }
 
+  const renderCanvasForm = () => {
+    return <CanvasForm/>
+  }
+
   return (
     <div>
       <div>
@@ -63,6 +67,9 @@ const Profile = () => {
         </h2>
         {renderCurrentUserInfo()}
         {renderUserList()}
+      </div>
+      <div>
+        {renderCanvasForm()}
       </div>
     </div>
   );

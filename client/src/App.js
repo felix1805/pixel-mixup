@@ -47,7 +47,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Profile />} />
-            <Route path="/canvas/:canvasid" element={<Home />} />
+            <Route path="/canvas/:canvasId" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/users/:id" element={<Profile />} />
