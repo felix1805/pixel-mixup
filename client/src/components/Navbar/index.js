@@ -21,7 +21,7 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <div style={styles.navbar}>
-        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px', transform: 'rotate(15deg)', marginBottom: '20px'}} className="btn-border nav-btn btn-1" to="/me">
+        <Link style={{ backgroundColor: '#992154', padding: '10px', borderRadius: '15px', transform: 'rotate(15deg)', marginBottom: '20px'}} className="btn-border nav-btn btn-1" to="/">
           MY PROFILE
         </Link>
         <button className="btn-border nav-btn btn-1" style={{ transform: 'rotate(15deg)', backgroundColor: '#992154', padding: '10px', borderRadius: '15px', marginBottom: '20px', cursor: 'pointer'}} onClick={logout}>
