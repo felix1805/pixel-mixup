@@ -58,8 +58,9 @@ const resolvers = {
     },
 
     // adds single tile
-    addTile: async (parent, { x, y, color }) => {
-      return await Tile.create({ x, y, color });
+    addTile: async (parent, { x, y, color, canvas }, context) => {
+
+      return await Tile.create({ x, y, color, canvas, user: context?.user });
     },
 
     // adds single canvas

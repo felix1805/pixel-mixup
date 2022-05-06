@@ -25,11 +25,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TILE = gql`
-mutation addTile($x: Int!, $y: Int!, $color: String!) {
-  addTile(x: $x, y: $y, color: $color) {
+mutation addTile($x: Int!, $y: Int!, $color: String!, $canvasId: String!) {
+  addTile(x: $x, y: $y, color: $color, canvasId: $canvasId) {
      x
      y
      color
+     _id
     }
   }
 `;

@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { User, Tile } = require('./index');
 
 const canvasSchema = new Schema({
   name: {
@@ -13,13 +12,6 @@ const canvasSchema = new Schema({
       ref: 'Tile'
     }
   ],
-  users: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ],
-
 });
 
 const Canvas = model('Canvas', canvasSchema);
