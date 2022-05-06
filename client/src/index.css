@@ -68,7 +68,12 @@ body {
   font-size: 15px;
   text-align: center;
   align-self: center;
-  color: #000;
+  color: rgb(0, 0, 0);
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+
 }
 
 .btn-border {
@@ -76,12 +81,9 @@ body {
   margin-left: 3px;
   margin-right: 5px;
   margin-top: 3px;
-  box-shadow: 0 0 5px #8D99AE;
+  
 }
 
-.btn-border:active {
-  box-shadow: 0 0 2px #8D99AE;
-}
 
 #selector-container {
   display: flex;
@@ -92,4 +94,60 @@ body {
 #color-selector {
   width: 100px;
   cursor: pointer;
+}
+.bezel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-bezel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: gray;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  /* max-width: 500px; */
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen {
+  background-color: rgba(134, 160, 81, 1);
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 200px;
+}
+.login-screen form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.login-screen form input {
+  background-color: rgb(128, 128, 128, 0.5);
+  margin: 5px
+}
+.login-screen form input::placeholder {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+}
+.login-screen form button {
+  background-color: #992154;
+  color: rgb(0, 0, 0);
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  border-radius: 7px;
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
 }
