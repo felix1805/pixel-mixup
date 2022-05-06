@@ -23,14 +23,14 @@ function Navbar() {
   }
   // If logged out show login controls
   return (
-    <div>
+    <div class="navbar">
       <div class="btn-border">
-        <Link class="nav-btn btn-1" to="/login">
+        <Link class="redirect btn-1" to="/login">
           LOGIN
         </Link>
       </div>
       <div class="btn-border">
-        <Link class="nav-btn btn-1" to="/signup">
+        <Link class="redirect btn-1" to="/signup">
           SIGNUP
         </Link>
       </div>

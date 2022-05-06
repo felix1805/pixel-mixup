@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <div id="title">
-        <Link to="/" id="redirect">
+        <Link to="/" class="redirect">
           <div>
             <h1>Pixel Mixup</h1>
           </div>
