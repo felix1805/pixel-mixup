@@ -55,3 +55,43 @@ canvas,
 .border {
   border: 1px solid black;
 }
+
+@media only screen and (max-width: 414px) {
+  canvas, #grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    transform: scale(2) translate(-50%, -50%);
+    transform-origin: 0 0;
+  }
+  
+  #grid, #overlay{
+    width: 512px;
+    height: 512px;
+    transform: scale(.25) translate(-50%, -50%);
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  canvas, #grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    transform: scale(4) translate(-50%, -50%);
+    transform-origin: 0 0;
+  }
+  
+  #grid, #overlay{
+    width: 512px;
+    height: 512px;
+    transform: scale(.5) translate(-50%, -50%);
+    margin-top: 60px;
+  }
+}
+
