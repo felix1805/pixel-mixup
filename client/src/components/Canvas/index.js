@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './style.css';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_TILE } from '../../utils/mutations';
 import { GET_TILES } from '../../utils/queries';
 
 const Canvas = () => {
-  const { data, loading } = useQuery(GET_TILES);
+  const { canvasId } = useParams();
+  const { data, loading } = useQuery(GET_TILES, {
+    variables: { canvasId }
+  });
   const tiles = data?.tiles || [];
 
   const overlayRef = useRef();
@@ -16,8 +20,10 @@ const Canvas = () => {
 
 
   useEffect(() => {
-    setContext(overlayRef.current.getContext('2d'));
-  }, []);
+    if (!loading) {
+      setContext(overlayRef.current.getContext('2d'));
+    }
+  }, [loading]);
 
   useEffect(() => {
     if (context) {
@@ -29,7 +35,7 @@ const Canvas = () => {
     }
   }, [tiles, context]);
 
-  const [addTile, {error}] = useMutation(ADD_TILE, {
+  const [addTile, { error }] = useMutation(ADD_TILE, {
     update(cache, { data: { addTile } }) {
       try {
         const { tiles } = cache.readQuery({ query: GET_TILES });
@@ -65,8 +71,9 @@ const Canvas = () => {
     console.log('color:', color);
     // adds coords {x,y} to localStorage
     try {
+      console.log(canvasId);
       const { data } = await addTile({
-        variables: { x, y, color }, 
+        variables: { x, y, color, canvasId },
       });
 
       // window.location.reload();
@@ -77,6 +84,9 @@ const Canvas = () => {
     // document.body.style.backgroundColor = `rgba(${rgba.join()})`;
 
   };
+  if (loading) {
+    return <h1>loading...</h1>
+  }
   return (
     <div id="artbox">
       <div id="selector-container">

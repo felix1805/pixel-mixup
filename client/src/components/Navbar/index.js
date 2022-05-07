@@ -16,6 +16,7 @@ function Navbar() {
           MY PROFILE
         </Link>
         <button class="btn-border nav-btn btn-1" onClick={logout}>
+
           LOGOUT
         </button>
       </div>

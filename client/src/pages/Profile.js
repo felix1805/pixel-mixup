@@ -7,6 +7,9 @@ import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
+import CanvasForm from '../components/CanvasForm';
+import { FallingLines } from 'react-loader-spinner';
+
 
 const Profile = () => {
   const { id } = useParams();
@@ -26,20 +29,15 @@ const Profile = () => {
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-    return <Navigate to="/me" replace />;
+    return <Navigate to="/" replace />;
+  }
+
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/login" replace />;
   }
 
   if (loading) {
-    return <h4>Loading...</h4>;
-  }
-
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
+    return <FallingLines width="110" color="#c8553d" />;
   }
 
   const renderUserList = () => {
@@ -59,6 +57,10 @@ const Profile = () => {
     );
   }
 
+  const renderCanvasForm = () => {
+    return <CanvasForm/>
+  }
+
   return (
     <div>
       <div>
@@ -67,6 +69,9 @@ const Profile = () => {
         </h2>
         {renderCurrentUserInfo()}
         {renderUserList()}
+      </div>
+      <div>
+        {renderCanvasForm()}
       </div>
     </div>
   );

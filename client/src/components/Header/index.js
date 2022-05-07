@@ -10,6 +10,7 @@ const Header = () => {
         <Link to="/" class="redirect">
           <div>
             <h1>Pixel Mixup</h1>
+
           </div>
         </Link>
       </div>

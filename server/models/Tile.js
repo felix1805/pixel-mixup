@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { User, Canvas } = require('./index');
 
 const tileSchema = new Schema({
   x: {
@@ -18,7 +17,7 @@ const tileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  canvas: {
+  canvasId: {
     type: Schema.Types.ObjectId,
     ref: 'Canvas'
   },

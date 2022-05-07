@@ -16,13 +16,13 @@ const typeDefs = gql`
     y: Int
     color: String
     user: User
+    canvas: Canvas
   }
 
   type Canvas {
     _id: ID
     name: String
-    tiles: [Tile]
-    users: [User]
+    tiles: [Tile]!
   }
 
   type Auth {
@@ -31,19 +31,19 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User]
+    users: [User]!
     user(id: ID!): User
     me: User
-    tiles: [Tile]
-    canvases: [Canvas]
-    canvas: Canvas
+    tiles(canvasId: ID): [Tile]!
+    canvases: [Canvas]!
+    canvas(id: ID!): Canvas
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
 
-    addTile(x:Int!, y:Int!, color:String!): Tile
+    addTile(canvasId:ID!, x:Int!, y:Int!, color:String!): [Tile]!
 
     addCanvas(name:String!): Canvas
 
