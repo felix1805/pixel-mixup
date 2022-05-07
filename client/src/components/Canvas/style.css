@@ -52,6 +52,11 @@ canvas,
     padding: 1px;
 }
 
+#artbox {
+  display: flex;
+  flex-direction: row;
+}
+
 .border {
   border: 1px solid black;
 }

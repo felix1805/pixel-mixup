@@ -4,10 +4,11 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_USERS, QUERY_USER, QUERY_ME, QUERY_CANVASES } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 import CanvasForm from '../components/CanvasForm';
+import CanvasList from '../components/CanvasList/index';
 import { FallingLines } from 'react-loader-spinner';
 
 
@@ -18,12 +19,14 @@ const Profile = () => {
   const { loading, data, error } = useQuery(id ? QUERY_USER : QUERY_ME, {
     variables: { id },
   });
+  const { loading: canvasLoading , data: canvasData } = useQuery(QUERY_CANVASES)
 
   // Get a list of all users
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
   const user = data?.me || data?.user || {};
   const users = usersData?.users || [];
+  const canvases = canvasData?.canvases || [];
 
   if (error) console.log(error);
 
@@ -58,8 +61,16 @@ const Profile = () => {
   }
 
   const renderCanvasForm = () => {
-    return <CanvasForm/>
+    return <CanvasForm />
   }
+
+  const renderCanvasList = () => {
+    if (loading || canvasLoading) {
+      return <h2>Loading...</h2>
+    } else {
+      return <CanvasList canvases={canvases} title="List of Canvases" />
+    }
+  } 
 
   return (
     <div>
@@ -68,10 +79,15 @@ const Profile = () => {
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
+        <div>
         {renderUserList()}
+        </div>
       </div>
       <div>
         {renderCanvasForm()}
+      </div>
+      <div>
+        {renderCanvasList()}
       </div>
     </div>
   );

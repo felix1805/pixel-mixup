@@ -8,13 +8,13 @@ import { QUERY_USERS, QUERY_CANVASES } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 import BlankCanvas from '../components/Canvas/index';
-import CanvasList from '../components/CanvasList';
+import CanvasList from '../components/CanvasList/index';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const { loading: canvasLoading , data: canvasData } = useQuery(QUERY_CANVASES);
   const users = data?.users || [];
-  const canvases = data?.canvasData || [];
+  const canvases = canvasData?.canvases || [];
 
   const renderUserList = () => {
     if (loading || canvasLoading) {
@@ -65,6 +65,12 @@ const Home = () => {
     <main>
       <div>
         {renderUsername()}
+      </div>
+      <div>
+        {renderUserList()}
+      </div>
+      <div>
+        {renderCanvasList()}
       </div>
       <div>
         {renderBlankCanvas()}
