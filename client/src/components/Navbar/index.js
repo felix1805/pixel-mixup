@@ -12,7 +12,7 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <div class='navbar'>
-        <Link class="btn-border nav-btn btn-1" to="/me">
+        <Link class="btn-border nav-btn btn-1" to="/">
           MY PROFILE
         </Link>
         <button class="btn-border nav-btn btn-1" onClick={logout}>

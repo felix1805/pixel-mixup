@@ -8,11 +8,11 @@ const styles = {
   }
 }
 
-const Canvas = ({ canvasId, name }) => {
+const Canvas = ({ _id, name }) => {
   return (
-    <div key={canvasId} style={styles.canvas}>
+    <div key={_id} style={styles.canvas}>
       <h4>
-        <Link to={`/users/${canvasId}`}>
+        <Link to={`/canvas/${_id}`}>
           {name}
         </Link>
       </h4>
@@ -22,7 +22,7 @@ const Canvas = ({ canvasId, name }) => {
 
 const CanvasList = ({ canvases, name }) => {
   if (!canvases.length) return <h3 className="aside">No Canvases</h3>;
-
+   
   const renderCanvases = () => {
     if (!canvases) return null;
     return canvases.map(canvas => <Canvas key={canvas.canvasId} {...canvas} />);
