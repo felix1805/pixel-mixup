@@ -67,11 +67,6 @@ const Home = () => {
         {renderUsername()}
       </div>
       <div>
-        {renderUserList()}
-        <h3>Canvases</h3>
-        {renderCanvasList()}
-      </div>
-      <div>
         {renderBlankCanvas()}
       </div>
     </main>
