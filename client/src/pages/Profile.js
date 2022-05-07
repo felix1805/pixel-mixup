@@ -76,7 +76,7 @@ const Profile = () => {
     <div>
       <div>
         <h2>
-          Viewing {id ? `${user.username}'s` : 'your'} profile.
+          Viewing {id ? `${user.username}'s` : 'your'} Studio.
         </h2>
         {renderCurrentUserInfo()}
         <div>

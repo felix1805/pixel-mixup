@@ -1,92 +1,74 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './style.css';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation, useLazyQuery } from '@apollo/client';
 import { ADD_TILE } from '../../utils/mutations';
 import { GET_TILES } from '../../utils/queries';
 
 const Canvas = () => {
+  // ROUTER PARAMS
   const { canvasId } = useParams();
-  const { data, loading } = useQuery(GET_TILES, {
-    variables: { canvasId }
+  // LAZY QUERY & MUTATION
+  const [getTiles] = useLazyQuery(GET_TILES, {
+    variables: { canvasId },
   });
-  const tiles = data?.tiles || [];
-
+  const [addTile] = useMutation(ADD_TILE);
+  // STATE
+  const [tiles, setTiles] = useState([]);
+  const [context, setContext] = useState(null);
+  // REFERENCES
   const overlayRef = useRef();
   const gridRef = useRef();
   const colorRef = useRef();
-  // const [coords, setCoords] = useState([]);
-  const [context, setContext] = useState(null);
-
-
+  // EFFECTS
   useEffect(() => {
-    if (!loading) {
+    if (overlayRef.current) {
       setContext(overlayRef.current.getContext('2d'));
     }
-  }, [loading]);
+  },[]);
 
   useEffect(() => {
-    if (context) {
-      context.clearRect(0, 0, overlayRef.current.width, overlayRef.current.height);
+    (async () => {
+      const { data } = await getTiles({ variables: { canvasId }});
+      setTiles(data.tiles);
+    })();
+  }, [canvasId, getTiles]);
+
+  useEffect(() => {
+    const updateGrid = () => {
+      const refWidth = overlayRef.current.width;
+      const refHeight = overlayRef.current.height;
+  
+      context.clearRect(0, 0, refWidth, refHeight);
+  
       tiles.forEach(({ x, y, color }) => {
         context.fillStyle = color;
         context.fillRect(x, y, 32, 32);
       })
-    }
-  }, [tiles, context]);
+    };
+    if (tiles.length) updateGrid();
+  }, [tiles]);
 
-  const [addTile, { error }] = useMutation(ADD_TILE, {
-    update(cache, { data: { addTile } }) {
-      try {
-        const { tiles } = cache.readQuery({ query: GET_TILES });
-
-        cache.writeQuery({
-          query: GET_TILES,
-          data: { tiles: [...tiles, addTile] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  /*-----------------------*/
 
   const handleImageClick = async (event) => {
     event.preventDefault();
-
-    console.log(overlayRef.current);
-    console.log(gridRef.current);
-    console.log(event);
-
-    const x = (event.nativeEvent.offsetX % 32 !== 0 ? event.nativeEvent.offsetX - event.nativeEvent.offsetX % 32 : event.nativeEvent.offsetX);
-    const y = (event.nativeEvent.offsetY % 32 !== 0 ? event.nativeEvent.offsetY - event.nativeEvent.offsetY % 32 : event.nativeEvent.offsetY);
-
-
-    // gets the x and y position of the mouse at the time of clicking
-    console.log("X:", event.nativeEvent.offsetX);
-    console.log("Y:", event.nativeEvent.offsetY);
-    // console.log('color value', selectedColor);
-
-    const color = colorRef.current.value;
-
-    console.log('color:', color);
-    // adds coords {x,y} to localStorage
-    try {
-      console.log(canvasId);
-      const { data } = await addTile({
-        variables: { x, y, color, canvasId },
-      });
-
-      // window.location.reload();
-    } catch (err) {
-      console.log(err);
+    if (context) {
+      const xPos = event.nativeEvent.offsetX;
+      const yPos = event.nativeEvent.offsetY;
+      const color = colorRef.current.value;
+      const x = (xPos % 32 !== 0 ? xPos - xPos % 32 : xPos);
+      const y = (yPos % 32 !== 0 ? yPos - yPos % 32 : yPos);
+      const variables = { x, y, color, canvasId };
+      try {
+        const { data } = await addTile({ variables });
+        setTiles(data.addTile);
+      } catch (err) {
+        console.log(err);
+      }
     }
-    // setCoords(coords => [...coords, { x, y, color }]);
-    // document.body.style.backgroundColor = `rgba(${rgba.join()})`;
-
   };
-  if (loading) {
-    return <h1>loading...</h1>
-  }
+   
   return (
     <div id="artbox">
       <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
