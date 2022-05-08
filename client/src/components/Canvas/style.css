@@ -5,10 +5,10 @@ body, html {
   margin: 0;
   padding: 0;
 }
-body {
+/* body {
   position: relative;
   min-height: 100vh;
-}
+} */
 canvas,
 #grid { 
   position: absolute;
