@@ -74,7 +74,7 @@ const Canvas = () => {
       <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
       <div ref={gridRef} id="grid" width="512" height="512"></div>
       <div id='selector-container'>
-      <input ref={colorRef} id='color-selector' type="color" value={'#ffffff'}/>
+      <input ref={colorRef} id='color-selector' type="color" defaultValue={'#ffffff'}/>
       </div>
     </div>
   )
