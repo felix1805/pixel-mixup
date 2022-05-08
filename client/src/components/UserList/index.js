@@ -21,7 +21,7 @@ const User = ({ _id, username }) => {
 };
 
 const UserList = ({ users, title }) => {
-  if (!users.length) return <h3 className="aside">No Users</h3>;
+  if (!users.length) return <h3 className="aside">You're the First User! Congratulations!</h3>;
 
   const renderUsers = () => {
     if (!users) return null;
