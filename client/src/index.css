@@ -1,13 +1,13 @@
-body{
+body {
   font-family: 'Chakra Petch', sans-serif;
 }
 
-header{
+header {
   height: 100px;
   margin-top: 0;
 }
 
-#title{
+#title {
   display: flex;
   justify-content: center;
   /* background-color: lightblue; */
@@ -19,41 +19,72 @@ header{
   height: 100px;
 }
 
-h1{
+h1 {
   height: 100px;
   margin: 0;
 }
 
-.redirect{
+.redirect {
   text-decoration: none;
   color: black;
   transition: all 80ms ease-out;
   height: 100px;
 }
 
-.redirect:active, .redirect:target{
+.redirect:active,
+.redirect:target {
   color: rgb(118, 118, 118);
-  
+
 }
 
-.redirect:visited{
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-vert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
+
+.redirect:visited {
   background-color: transparent;
   text-decoration: none;
 }
 
-#selector-container{
+#selector-container {
   display: flex;
   justify-content: center;
 }
 
-#color-selector{
+.text-center {
+  margin: 5px 0 5px 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#color-selector {
   width: 50px;
-  /* margin-top: 10px; */
   height: 50px;
+  margin-top: 1px;
   overflow: hidden;
 }
 
-.navbar{
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
   display: flex;
   justify-content: center;
   position: fixed;
@@ -62,24 +93,24 @@ h1{
   margin: 20px;
 }
 
-.btn-border{
+.btn-border {
   margin-right: 5px;
 }
 
-.btn-1{
+.btn-1 {
   /* background-color: lightblue; */
   padding: 5px;
   box-shadow: 0 0 3px rgb(102, 127, 135);
   border-radius: 8px;
 }
 
-.btn-1:active{
+.btn-1:active {
   box-shadow: 0 0 3px rgb(154, 191, 203);
 }
 
 @media only screen and (max-width: 768px) {
 
-  #title{
+  #title {
     display: flex;
     justify-content: center;
     /* background-color: lightblue; */
@@ -91,13 +122,13 @@ h1{
     height: 100px;
   }
 
-  #color-selector{
+  #color-selector {
     height: 40px;
     width: 40px;
     margin-top: 40px;
   }
 
-  .navbar{
+  .navbar {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -108,7 +139,7 @@ h1{
     top: 40px;
   }
 
-  .btn-border{
+  .btn-border {
     margin-bottom: 20px;
   }
 

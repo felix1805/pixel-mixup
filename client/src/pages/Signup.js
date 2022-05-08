@@ -47,9 +47,8 @@ const Signup = () => {
       )
     }
     return (
-      <div className='bezel'>
-        <div className='form-screen'>
-        <form onSubmit={handleFormSubmit}>
+      <div className='centered-vert'>
+        <form className='centered-vert' onSubmit={handleFormSubmit}>
           <input
             placeholder="Your username"
             name="username"
@@ -75,21 +74,16 @@ const Signup = () => {
             Submit
           </button>
         </form>
-        </div>
       </div>
     );
   };
 
   return (
     <main>
-      <div className="form-container">
-        <div className="form-bezel">
-          <div className="screen">
-            <h4>Sign Up</h4>
-            {renderForm()}
-            {error && <div>{error.message}</div>}
-          </div>
-        </div>
+      <div className='centered-vert'>
+        <h4>Sign Up</h4>
+        {renderForm()}
+        {error && <div>{error.message}</div>}
       </div>
     </main >
   );

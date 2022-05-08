@@ -43,6 +43,7 @@ const CanvasForm = ({ name }) => {
       {Auth.loggedIn() ? (
         <form
           onSubmit={handleFormSubmit}
+          className='centered-vert'
         >
           <div>
             <input
