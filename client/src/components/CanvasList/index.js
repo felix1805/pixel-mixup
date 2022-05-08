@@ -25,7 +25,7 @@ const CanvasList = ({ canvases, name }) => {
    
   const renderCanvases = () => {
     if (!canvases) return null;
-    return canvases.map(canvas => <Canvas key={canvas.canvasId} {...canvas} />);
+    return canvases.map(canvas => <Canvas key={canvas._id} {...canvas} />);
   }
 
   return (

@@ -49,6 +49,8 @@ const typeDefs = gql`
 
     addBadge(userId: ID!, badge: String!): User
     addClick(userId: ID!, click: Int!): User
+
+    deleteCanvas(canvasId: ID!): Canvas
   }
 `;
 

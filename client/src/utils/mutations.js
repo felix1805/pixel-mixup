@@ -61,3 +61,12 @@ mutation addCanvas($name: String!) {
   }
 }
 `;
+
+export const DELETE_CANVAS = gql`
+  mutation deleteCanvas($canvasId: ID!) {
+  deleteCanvas(canvasId: $canvasId) {
+    _id
+    name
+  }
+}
+`
