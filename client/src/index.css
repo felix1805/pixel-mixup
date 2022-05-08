@@ -63,6 +63,9 @@ input {
 #selector-container {
   display: flex;
   justify-content: center;
+  position: absolute;
+  left: 45%;
+  top: 15%;
 }
 
 .text-center {
@@ -106,6 +109,13 @@ input {
 
 .btn-1:active {
   box-shadow: 0 0 3px rgb(154, 191, 203);
+}
+
+.centered-canvas-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width: 768px) {

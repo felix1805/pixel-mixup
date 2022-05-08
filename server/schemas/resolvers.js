@@ -119,8 +119,7 @@ const resolvers = {
     },
 
     deleteCanvas: async (parent, { canvasId }) => {
-      const deleteCanvas = await Canvas.findOneAndDelete({ _id: canvasId });
-      // const deleteTiles = await Tile.fin
+       return Canvas.findOneAndDelete({ _id: canvasId });
     },
   }
 }
