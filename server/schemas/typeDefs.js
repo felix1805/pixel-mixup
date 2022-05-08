@@ -16,7 +16,6 @@ const typeDefs = gql`
     y: Int
     color: String
     user: User
-    canvas: Canvas
   }
 
   type Canvas {
