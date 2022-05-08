@@ -71,6 +71,10 @@ const Canvas = () => {
 
   return (<>
     <div id="artbox">
+      <div className='color-picker'>
+        <p className='text-center'>Color Selector</p>
+        <input ref={colorRef} id='color-selector' type="color" defaultValue={'#ffffff'} />
+      </div>
       <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
       <div ref={gridRef} id="grid" width="512" height="512"></div>
       <div id='selector-container'>
