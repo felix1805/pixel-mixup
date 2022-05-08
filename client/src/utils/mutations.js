@@ -67,6 +67,12 @@ export const DELETE_CANVAS = gql`
   deleteCanvas(canvasId: $canvasId) {
     _id
     name
+    tiles {
+      _id
+      x
+      y
+      color
+    }
   }
 }
 `
