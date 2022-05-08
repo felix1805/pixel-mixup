@@ -74,14 +74,14 @@ const Profile = () => {
 
   return (
     <div>
-      <div>
+      <div id='acct'>
         <h2>
           Viewing {id ? `${user.username}'s` : 'your'} Studio.
         </h2>
         {renderCurrentUserInfo()}
-        <div>
+        {/* <div>
         {renderUserList()}
-        </div>
+        </div> */}
       </div>
       <div>
         {renderCanvasForm()}
