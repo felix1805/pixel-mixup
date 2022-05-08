@@ -81,14 +81,15 @@ const Profile = () => {
 
   return (
     <div className='centered-vert'>
-      <div>
+      <div id='acct'>
         <h2 className='centered-vert'>
+
           Viewing {id ? `${user.username}'s` : 'your'} Studio.
         </h2>
         {renderCurrentUserInfo()}
-        <div>
+        {/* <div>
         {renderUserList()}
-        </div>
+        </div> */}
       </div>
       <div>
         {renderCanvasForm()}
