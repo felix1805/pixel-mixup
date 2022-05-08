@@ -49,11 +49,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className='color-picker'>
         {renderUsername()}
-        <p className='text-center'>Color Selector</p>
-        <input ref={colorRef} id='color-selector' type="color" defaultValue={'#ffffff'} />
-      </div>
       <div>
         {renderUserList()}
       </div>
