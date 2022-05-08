@@ -49,42 +49,36 @@ const Login = () => {
       )
     }
     return (
-      <div className="bezel">
-        <div className="form-screen">
-          <form onSubmit={handleFormSubmit}>
-            <input
-              placeholder="Your email"
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <input
-              placeholder="******"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-            <button type="submit">
-              Submit
-            </button>
-          </form>
-        </div>
+      <div className="centered-vert">
+        <form className='centered-vert' onSubmit={handleFormSubmit}>
+          <input
+            placeholder="Your email"
+            name="email"
+            type="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="******"
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <button type="submit">
+            Submit
+          </button>
+        </form>
       </div>
     );
   };
 
   return (
     <main>
-      <div className="form-container">
-        <div className="form-bezel">
-          <div className="screen">
-            <h4>Login</h4>
-            {renderForm()}
-            {error && <div>{error.message}</div>}
-          </div>
-        </div>
+      <div className='centered-vert'>
+        <h4>Login</h4>
+        {renderForm()}
+        {error && <div>{error.message}</div>}
       </div>
     </main>
   );

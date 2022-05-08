@@ -9,6 +9,7 @@ import { QUERY_USERS, QUERY_USER, QUERY_ME, QUERY_CANVASES } from '../utils/quer
 import UserList from '../components/UserList';
 import CanvasForm from '../components/CanvasForm';
 import CanvasList from '../components/CanvasList/index';
+import Canvas from '../components/Canvas/index'
 import { FallingLines } from 'react-loader-spinner';
 
 
@@ -53,7 +54,7 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul>
+      <ul className='centered-vert'>
         <li>username: {user.username}</li>
         <li>email: {user.email}</li>
       </ul>
@@ -72,10 +73,17 @@ const Profile = () => {
     }
   } 
 
+  const renderCanvas = () => {
+    return (
+      <Canvas />
+    )
+  }
+
   return (
-    <div>
+    <div className='centered-vert'>
       <div id='acct'>
-        <h2>
+        <h2 className='centered-vert'>
+
           Viewing {id ? `${user.username}'s` : 'your'} Studio.
         </h2>
         {renderCurrentUserInfo()}

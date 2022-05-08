@@ -117,6 +117,10 @@ const resolvers = {
         );
       }
     },
+
+    deleteCanvas: async (parent, { canvasId }) => {
+       return Canvas.findOneAndDelete({ _id: canvasId });
+    },
   }
 }
 module.exports = resolvers;

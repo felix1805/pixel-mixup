@@ -46,15 +46,12 @@ export const QUERY_ME = gql`
 `;
 
 export const GET_TILES = gql`
-  query tiles {
-    tiles {
-      x
-      y
-      color
-      _id
-      user {
-        username
-      }
-    }
+  query tiles ($canvasId: ID) {
+  tiles(canvasId: $canvasId) {
+    _id
+    x
+    y
+    color
   }
+}
 `;

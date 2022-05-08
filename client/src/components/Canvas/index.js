@@ -25,11 +25,11 @@ const Canvas = () => {
     if (overlayRef.current) {
       setContext(overlayRef.current.getContext('2d'));
     }
-  },[]);
+  }, []);
 
   useEffect(() => {
     (async () => {
-      const { data } = await getTiles({ variables: { canvasId }});
+      const { data } = await getTiles({ variables: { canvasId } });
       setTiles(data.tiles);
     })();
   }, [canvasId, getTiles]);
@@ -38,9 +38,9 @@ const Canvas = () => {
     const updateGrid = () => {
       const refWidth = overlayRef.current.width;
       const refHeight = overlayRef.current.height;
-  
+
       context.clearRect(0, 0, refWidth, refHeight);
-  
+
       tiles.forEach(({ x, y, color }) => {
         context.fillStyle = color;
         context.fillRect(x, y, 32, 32);
@@ -68,15 +68,27 @@ const Canvas = () => {
       }
     }
   };
-   
-  return (
+
+  return (<>
     <div id="artbox">
-      <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512"></canvas>
-      <div ref={gridRef} id="grid" width="512" height="512"></div>
-      <div id='selector-container'>
-      <input ref={colorRef} id='color-selector' type="color" />
+      <canvas ref={overlayRef} onClick={handleImageClick} id="overlay" width="512" height="512">
+
+      </canvas>
+      <div ref={gridRef} id="grid" width="512" height="512">
+
       </div>
+
+      <div id='selector-container'>
+        <div className='color-picker'>
+          <p className='text-center'>Color Selector
+          </p>
+
+          <input ref={colorRef} id='color-selector' type="color" defaultValue={'#ffffff'} />
+        </div>
+      </div>
+
     </div>
+  </>
   )
 }
 
