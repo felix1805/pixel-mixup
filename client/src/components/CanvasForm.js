@@ -35,7 +35,7 @@ const CanvasForm = ({ name }) => {
 
   return (
     <div>
-      <h4>Create your Canvas Below:</h4>
+      <h4 className="header-lg">Create your Canvas Below:</h4>
 
       {Auth.loggedIn() ? (
         <form
@@ -53,7 +53,7 @@ const CanvasForm = ({ name }) => {
           </div>
 
           <div>
-            <button type="submit">
+            <button className="btn-1 btn-border spc-1" type="submit">
               CREATE CANVAS
             </button>
           </div>

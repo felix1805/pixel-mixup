@@ -10,9 +10,9 @@ const styles = {
 
 const User = ({ _id, username }) => {
   return (
-    <div key={_id} style={styles.users}>
-      <h4>
-        <Link to={`/users/${_id}`}>
+    <div className="user-cont" key={_id}>
+      <h4 class="align">
+        <Link className="btn-1 user-btn" to={`/users/${_id}`}>
           {username}
         </Link>
       </h4>
@@ -29,8 +29,8 @@ const UserList = ({ users, title }) => {
   }
 
   return (
-    <div style={styles.users}>
-      <h3>{title}</h3>
+    <div>
+      <h3 className="aside">{title}</h3>
       {renderUsers()}
     </div>
   );
