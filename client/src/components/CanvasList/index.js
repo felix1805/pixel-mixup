@@ -34,7 +34,8 @@ const CanvasList = ({ canvases, isLoggedInUser = false }) => {
   }
 
   return (
-    <div>
+    <div className='margin-bottom'>
+      <h3 className='aside'>Canvases</h3>
       {canvases &&
         canvases.map((canvas) => (
           <div id="tag-cont" key={canvas.name}>
@@ -56,37 +57,5 @@ const CanvasList = ({ canvases, isLoggedInUser = false }) => {
     </div>
   )
 };
-
-
-// const Canvas = ({ _id, name }) => {
-//   return (
-//     <div className='centered-canvas-name' key={_id} >
-//       <h4>
-//         <Link to={`/canvas/${_id}`}>
-//           {name}
-//         </Link>
-//       </h4>
-//       <a href='#' >🗑️</a>
-//     </div>
-//   );
-// };
-
-
-
-// const CanvasList = ({ canvases, name }) => {
-//   if (!canvases.length) return <h3 className="aside">No Canvases</h3>;
-
-// const renderCanvases = () => {
-//   if (!canvases) return null;
-//   return canvases.map(canvas => <Canvas key={canvas._id} {...canvas} />);
-// }
-
-// return (
-//   <div style={styles.canvas}>
-//     <h3>{name}</h3>
-//     {DeleteCanvasList()}
-//   </div>
-// );
-// };
 
 export default CanvasList;
