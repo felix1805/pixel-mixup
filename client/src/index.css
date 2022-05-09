@@ -292,8 +292,12 @@ section {
 
 }
 
+/* query for 480px */
+@media only screen and (max-width: 480px) {
 
-@media only screen and (max-width: 768px) {
+  header {
+    margin-bottom: 50px;
+  }
 
   #title {
     display: flex;
@@ -326,4 +330,168 @@ section {
     margin-bottom: 20px;
   }
 
+  #selector-container {
+    left: 45.8%;
+    top: 75%;
+  }
+
+  .text-center {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .userName {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  footer {
+    display: none;
+  }
 }
+
+/* query for 768px */
+@media only screen and (max-width: 768px) {
+
+  main,
+  header,
+  footer {
+    transform: scale(1.5);
+  }
+
+  .footer-distributed {
+    padding: 25px 128px 0px 0px;
+  }
+
+  header {
+    margin-bottom: 190px;
+    margin-top: 25px;
+  }
+  footer {
+    display: none;
+  }
+
+  #title {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    transform: translate(16.75%);
+    font-family: 'Bungee', cursive;
+    font-size: 12px;
+    margin-top: 0;
+    height: 100px;
+  }
+
+  #color-selector {
+    height: 40px;
+    width: 40px;
+    margin-top: 40px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    left: 0;
+    top: 40px;
+  }
+
+  .btn-border {
+    margin-bottom: 20px;
+  }
+
+  #selector-container {
+    left: 47.5%;
+    top: 250px;
+  }
+
+  .text-center {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .userName {
+    display: none;
+  }
+}
+
+/* query for 1024px */
+@media only screen and (max-width: 1024px) {
+
+  main,
+  header,
+  footer {
+    transform: scale(1.5);
+  }
+
+  .footer-distributed {
+    padding: 25px 128px 0px 0px;
+  }
+  
+  footer {
+    display: none;
+  }
+
+  header {
+    margin-bottom: 190px;
+    margin-top: 25px;
+  }
+
+  #title {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    transform: translate(16.75%);
+    font-family: 'Bungee', cursive;
+    font-size: 12px;
+    margin-top: 0;
+    height: 100px;
+  }
+
+  #color-selector {
+    height: 40px;
+    width: 40px;
+    margin-top: 40px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    left: 0;
+    top: 40px;
+  }
+
+  .btn-border {
+    margin-bottom: 20px;
+  }
+
+  #selector-container {
+    left: 47.5%;
+    top: 250px;
+  }
+
+  .text-center {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .userName {
+    display: none;
+  }
+}
+
