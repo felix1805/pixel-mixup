@@ -460,7 +460,6 @@ section {
   #color-selector {
     height: 40px;
     width: 40px;
-    margin-top: 40px;
   }
 
   .navbar {
@@ -478,12 +477,8 @@ section {
   }
 
   #selector-container {
-    left: 47.5%;
-    top: 250px;
-  }
-
-  .text-center {
-    display: none;
+    left: 45%;
+    top: 300px;
   }
 
   .hidden {
@@ -492,6 +487,10 @@ section {
 
   .userName {
     display: none;
+  }
+
+  .centered-vert {
+    transform: scale(1.15);
   }
 }
 
