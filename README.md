@@ -30,19 +30,19 @@ This website can be used to easily create, manage and store pixel art. A user ca
 
 Usage and Code Examples:
 
-![img](./assets/Code_snippet_1.JPG)
+![img](../assets/Code_snippet_1.JPG)
 
-![img](./assets/Code_snippet_2.JPG)
+![img](../assets/Code_snippet_2.JPG)
 
-![img](./assets/Pixel_Mixup_screenshot_1.JPG)
+![img](../assets/Pixel_Mixup_screenshot_1.JPG)
 
-![img](./assets/Pixel_Mixup_screenshot_2.JPG)
+![img](../assets/Pixel_Mixup_screenshot_2.JPG)
 
-![img](./assets/Pixel_Mixup_screenshot_3.JPG)
+![img](../assets/Pixel_Mixup_screenshot_3.JPG)
 
-![img](./assets/Pixel_Mixup_screenshot_4.JPG)
+![img](../assets/Pixel_Mixup_screenshot_4.JPG)
 
-![img](./assets/Pixel_Mixup_screenshot_5.JPG)
+![img](../assets/Pixel_Mixup_screenshot_5.JPG)
 
 ## Contributors
 
