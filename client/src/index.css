@@ -336,7 +336,7 @@ section {
 
 #home-info{
   display: flex;
-  width: 340px;
+  width: 400px;
   flex-direction: row;
   margin-left: 30px;
   margin-top: 50px;
