@@ -5,10 +5,10 @@ import Auth from '../../utils/auth';
 
 function Navbar() {
   const logout = (event) => {
-    event.preventDefault();
+    window.location.replace('./login')
     Auth.logout();
   };
-  
+
   if (Auth.loggedIn()) {
     return (
       <div className='navbar'>

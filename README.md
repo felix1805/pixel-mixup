@@ -1,6 +1,0 @@
-
-# pixel-mixup
-
-test
-
-

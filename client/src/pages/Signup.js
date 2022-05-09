@@ -6,6 +6,12 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+const styles = {
+  footerDown: {
+    marginBottom: '514px'
+}
+}
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
@@ -47,7 +53,7 @@ const Signup = () => {
       )
     }
     return (
-      <div className='centered-vert'>
+      <div className='centered-vert' style={styles.footerDown}>
         <form className='centered-vert' onSubmit={handleFormSubmit}>
           <input
             placeholder="Your username"

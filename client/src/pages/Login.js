@@ -5,6 +5,12 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+const styles = {
+  footerDown: {
+    marginBottom: '514px'
+}
+}
+
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -49,7 +55,7 @@ const Login = () => {
       )
     }
     return (
-      <div className="centered-vert">
+      <div className="centered-vert" >
         <form className='centered-vert' onSubmit={handleFormSubmit}>
           <input
             placeholder="Your email"
@@ -75,7 +81,7 @@ const Login = () => {
 
   return (
     <main>
-      <div id="user-list" className='centered-vert login-signup'>
+      <div id="user-list" className='centered-vert login-signup' style={styles.footerDown}>
         <h4 className="header-lg">Login</h4>
         {renderForm()}
         {error && <div>{error.message}</div>}

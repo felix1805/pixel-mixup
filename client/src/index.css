@@ -1,20 +1,16 @@
 body {
   font-family: 'Chakra Petch', sans-serif;
   color: #454545;
-  overflow-y: scroll;
-  height: 5000px;
-  
+  overflow-y: auto;
+  height: 100vh;
+  margin: 0;
+
 }
 
 header {
   height: 100px;
   margin-top: 0;
 }
-
-/* .hidden {
-  overflow-y: scroll;
-  height: 5000px;
-} */
 
 .login-signup{
   transform: translate(0, 45%);
@@ -178,9 +174,9 @@ section {
 	text-align: left;
 	font: bold 16px Chakra Petch;
 	padding: 25px 50px;
-  position: fixed;
   bottom: 0;
   height: 15%;
+  margin-top: 200px;
   
 }
 
