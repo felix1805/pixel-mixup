@@ -119,7 +119,7 @@ input {
 
 #tag-cont{
   height: 40px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #canvas-tags{
@@ -336,15 +336,21 @@ section {
 
 #home-info{
   display: flex;
-  width: 200px;
-  flex-direction: column;
+  width: 340px;
+  flex-direction: row;
   margin-left: 30px;
   margin-top: 50px;
-  align-items: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.hidden {
+  margin-left: 5px;
 }
 
 .align{
   width: fit-content;
+  margin: 10px
 }
 
 .user-cont{
@@ -490,6 +496,8 @@ section {
   footer {
     display: none;
   }
+
+  
 
   #title {
     display: flex;
