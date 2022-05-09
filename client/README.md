@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# PIXEL MIXUP - Group Project # 3
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Pixel Mixup was created to give users an easy platform to create, manage and share pixel art in a 16x16 layout. Once a user creates a profile, they can create new artwork, along with populating previous canvases. The pixel editor allows individual tiles to be colored using an rgb color picker, a hexcode color format or a color eyedropper tool. 
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- [Description](#description)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Installation](#installation)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Usage](#usage)
 
-### `yarn test`
+- [Contributors](#contributors)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Technology](#technology)
 
-### `yarn build`
+- [Links](#links)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application can be executed by performing an npm installation using the "npm install" command. Following the installation, if setup for the first time, the "npm run seed" command should be used to seed database values and allow the site to populate with information. The "npm run develop" command can be used to launch the server @ http://localhost:3001. Alternatively, the live page can also be accessed through a live heroku server @ https://bit-by-bit-2022-05-05.herokuapp.com/. This will allow a user to view the website and create or view pixel art.
 
-### `yarn eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This website can be used to easily create, manage and store pixel art. A user can create a profile at which point they can access previously created canvases. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Usage and Code Examples:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![img](../assets/Code_snippet_1.JPG)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![img](../assets/Code_snippet_2.JPG)
 
-## Learn More
+![img](../assets/Pixel_Mixup_screenshot_1.JPG)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![img](../assets/Pixel_Mixup_screenshot_2.JPG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![img](../assets/Pixel_Mixup_screenshot_3.JPG)
 
-### Code Splitting
+![img](../assets/Pixel_Mixup_screenshot_4.JPG)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![img](../assets/Pixel_Mixup_screenshot_5.JPG)
 
-### Analyzing the Bundle Size
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Baron Skidmore GitHub Link](https://github.com/IAmSkidd7).
 
-### Making a Progressive Web App
+[Emma D Malone GitHub Link](https://github.com/Buggiess).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[Felix Petzsche GitHub Link](https://github.com/felix1805).
 
-### Advanced Configuration
+[Rich Kim GitHub Link](https://github.com/Rich-afk).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Sean Duiser GitHub Link](https://github.com/Sean-Duiser).
 
-### Deployment
+[Seth Wooten GitHub Link](https://github.com/slwooten).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Technology
+
+This application uses JavaScript, React.js, JEST, HTML, node.js, express routing, mysql2, graphql, apollo-server along with node package management and inquirer. It should be viewed by launching a live server in order to access the @ http://localhost:3001 or on a Heroku server @ https://bit-by-bit-2022-05-05.herokuapp.com/
+
+## Links
+
+[Pixel Mixup GitHub Deployed Link](https://felix1805.github.io/pixel-mixup/).
+<br>
+[Pixel Mixup GitHub Link](https://github.com/felix1805/pixel-mixup).
+<br>
+[Pixel Mixup Heroku Link](https://bit-by-bit-2022-05-05.herokuapp.com/).
