@@ -41,10 +41,10 @@ canvas,
 
 #grid {
   background-image:
-      repeating-linear-gradient(0deg, black 0 1px, transparent 1px 100%),
-      repeating-linear-gradient(90deg, black 0 1px, transparent 1px 100%),
-      repeating-linear-gradient(180deg, black 0 1px, transparent 1px 100%),
-      repeating-linear-gradient(270deg, black 0 1px, transparent 1px 100%);
+      repeating-linear-gradient(0deg, black 0 0px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, black 0 0px, transparent 1px 100%),
+      repeating-linear-gradient(180deg, black 0 0px, transparent 1px 100%),
+      repeating-linear-gradient(270deg, black 0 0px, transparent 1px 100%);
     background-size: 32px 32px;
     position: 0;
     /* border: 1px solid black; */
