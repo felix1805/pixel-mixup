@@ -80,9 +80,6 @@ const Canvas = () => {
 
       <div id='selector-container'>
         <div className='color-picker'>
-          <p className='text-center'>Color Selector
-          </p>
-
           <input ref={colorRef} id='color-selector' type="color" defaultValue={'#ffffff'} />
         </div>
       </div>

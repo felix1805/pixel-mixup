@@ -64,13 +64,13 @@ const Signup = () => {
             onChange={handleChange}
           />
           <input
-            placeholder="******"
+            placeholder="********"
             name="password"
             type="password"
             value={formState.password}
             onChange={handleChange}
           />
-          <button type="submit">
+          <button className="login-btn btn-1 btn-border" type="submit">
             Submit
           </button>
         </form>
@@ -80,8 +80,8 @@ const Signup = () => {
 
   return (
     <main>
-      <div className='centered-vert'>
-        <h4>Sign Up</h4>
+      <div className='centered-vert login-signup'>
+        <h4 className="header-lg">Sign Up</h4>
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>

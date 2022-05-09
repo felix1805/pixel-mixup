@@ -43,10 +43,9 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul className='centered-vert'>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
+      <div className='centered-vert'>
+        <p>email: {user.email}</p>
+      </div>
     );
   }
 
@@ -63,11 +62,11 @@ const Profile = () => {
   } 
 
   return (
-    <div className='centered-vert'>
+    <div className='centered-vert info-cont'>
       <div id='acct'>
         <h2 className='centered-vert'>
 
-          Viewing {id ? `${user.username}'s` : 'your'} Studio.
+          {`${user.username}'s`} Studio
         </h2>
         {renderCurrentUserInfo()}
         {/* <div>

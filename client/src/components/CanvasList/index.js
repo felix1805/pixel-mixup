@@ -37,15 +37,15 @@ const CanvasList = ({ canvases, isLoggedInUser = false }) => {
     <div>
       {canvases &&
         canvases.map((canvas) => (
-          <div key={canvas.name}>
-            <h4>
-              <Link to={`/canvas/${canvas._id}`}>
+          <div id="tag-cont" key={canvas.name}>
+            <h4 id="canvas-tags">
+              <Link className="btn-rnd btn-border" to={`/canvas/${canvas._id}`}>
                 {canvas.name}
               </Link>
-                <button
+                <button className="btn-rnd btn-border wht-btn"
                   onClick={() => handleDeleteCanvas(canvas._id)}
                 >
-                  Here is the delete button
+                  <i class="fa-solid fa-trash"></i>
                 </button>
             </h4>
           </div>

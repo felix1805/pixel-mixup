@@ -46,10 +46,10 @@ const Home = () => {
 
   return (
     <main>
-      <div>
-        <h3 className='userName'>
+      <div id="home-info">
+        {/* <h3 className='userName'>
           {renderUsername()}
-        </h3>
+        </h3> */}
         <div className='hidden'>
           {renderUserList()}
         </div>

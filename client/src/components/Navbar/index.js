@@ -12,11 +12,10 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <div className='navbar'>
-        <Link className="btn-border nav-btn btn-1" to="/">
+        <Link className="btn-border btn-1" to="/">
           MY STUDIO
         </Link>
-        <button className="btn-border nav-btn btn-1" onClick={logout}>
-
+        <button className="btn-border btn-1 wht-btn" onClick={logout}>
           LOGOUT
         </button>
       </div>
