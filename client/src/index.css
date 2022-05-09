@@ -10,7 +10,6 @@ header {
 #title {
   display: flex;
   justify-content: center;
-  /* background-color: lightblue; */
   width: 75%;
   transform: translate(16.75%);
   font-family: 'Bungee', cursive;
@@ -101,7 +100,6 @@ input {
 }
 
 .btn-1 {
-  /* background-color: lightblue; */
   padding: 5px;
   box-shadow: 0 0 3px rgb(102, 127, 135);
   border-radius: 8px;
@@ -271,27 +269,6 @@ section {
 	margin-bottom: 20px;
 }
 
-/* .footer-distributed .footer-icons{
-	margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-} */
-
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
@@ -321,7 +298,6 @@ section {
   #title {
     display: flex;
     justify-content: center;
-    /* background-color: lightblue; */
     width: 75%;
     transform: translate(16.75%);
     font-family: 'Bungee', cursive;
@@ -341,7 +317,6 @@ section {
     justify-content: center;
     position: fixed;
     flex-direction: column;
-    /* transform: translate(-100%, 50%); */
     align-items: center;
     left: 0;
     top: 40px;

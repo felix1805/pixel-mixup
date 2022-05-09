@@ -5,10 +5,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
-/* body {
-  position: relative;
-  min-height: 100vh;
-} */
+
 canvas,
 #grid { 
   position: absolute;
@@ -32,13 +29,6 @@ canvas,
   pointer-events: none;
 }
 
-/* #grid {
-  border: 1px solid black;
-  background-position: 0 0;
-  background-repeat: repeat;
-  background-image: url('./lines-again.png');
-} */
-
 #grid {
   background-image:
       repeating-linear-gradient(0deg, black 0 0px, transparent 1px 100%),
@@ -47,7 +37,6 @@ canvas,
       repeating-linear-gradient(270deg, black 0 0px, transparent 1px 100%);
     background-size: 32px 32px;
     position: 0;
-    /* border: 1px solid black; */
     box-sizing: border-box;
     padding: 1px;
 }

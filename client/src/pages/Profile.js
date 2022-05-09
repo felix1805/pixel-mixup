@@ -4,12 +4,10 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME, QUERY_CANVASES } from '../utils/queries';
+import { QUERY_USER, QUERY_ME, QUERY_CANVASES } from '../utils/queries';
 // Components
-import UserList from '../components/UserList';
 import CanvasForm from '../components/CanvasForm';
 import CanvasList from '../components/CanvasList/index';
-import Canvas from '../components/Canvas/index'
 import { FallingLines } from 'react-loader-spinner';
 
 
@@ -23,10 +21,8 @@ const Profile = () => {
   const { loading: canvasLoading , data: canvasData } = useQuery(QUERY_CANVASES)
 
   // Get a list of all users
-  const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
   const user = data?.me || data?.user || {};
-  const users = usersData?.users || [];
   const canvases = canvasData?.canvases || [];
 
   if (error) console.log(error);
@@ -43,13 +39,6 @@ const Profile = () => {
   if (loading) {
     return <FallingLines width="110" color="#c8553d" />;
   }
-
-  const renderUserList = () => {
-    if (usersLoading) return null;
-    // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter(o => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
-  };
 
   const renderCurrentUserInfo = () => {
     if (id) return null;
@@ -72,12 +61,6 @@ const Profile = () => {
       return <CanvasList canvases={canvases} title="List of Canvases" />
     }
   } 
-
-  const renderCanvas = () => {
-    return (
-      <Canvas />
-    )
-  }
 
   return (
     <div className='centered-vert'>

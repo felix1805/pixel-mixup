@@ -47,7 +47,7 @@ const Canvas = () => {
       })
     };
     if (tiles.length) updateGrid();
-  }, [tiles]);
+  }, [tiles, context]);
 
   /*-----------------------*/
 
