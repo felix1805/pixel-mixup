@@ -46,12 +46,16 @@ const Home = () => {
 
   return (
     <main>
-        {renderUsername()}
       <div>
-        {renderUserList()}
-      </div>
-      <div>
-        {renderCanvasList()}
+        <h3 className='userName'>
+          {renderUsername()}
+        </h3>
+        <div className='hidden'>
+          {renderUserList()}
+        </div>
+        <div className='hidden'>
+          {renderCanvasList()}
+        </div>
       </div>
       <div>
         {renderCanvas()}

@@ -105,7 +105,7 @@ canvas,
   #grid, #overlay{
     width: 512px;
     height: 512px;
-    transform: scale(.75) translate(-50%, -50%);
+    transform: scale(.7) translate(-50%, -45%);
     margin-top: 60px;
   }
 }
