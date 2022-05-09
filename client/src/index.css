@@ -1,6 +1,8 @@
 body {
   font-family: 'Chakra Petch', sans-serif;
   color: #454545;
+  overflow-y: scroll;
+  height: 5000px;
   
 }
 
@@ -9,10 +11,10 @@ header {
   margin-top: 0;
 }
 
-.hidden {
+/* .hidden {
   overflow-y: scroll;
   height: 5000px;
-}
+} */
 
 .login-signup{
   transform: translate(0, 45%);
