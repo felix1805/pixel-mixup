@@ -8,7 +8,6 @@ import Auth from '../utils/auth';
 
 const CanvasForm = ({ name }) => {
   const [formState, setFormState] = useState({ name: '' });
-  const [canvas, setCanvas] = useState('');
   const navigate = useNavigate();
 
   const [addCanvas, { error }] = useMutation(ADD_CANVAS);
@@ -28,8 +27,6 @@ const CanvasForm = ({ name }) => {
       const {data} = await addCanvas({
         variables: { ...formState },
       });
-      console.log(data);
-      // <Navigate to={`/canvas/${data.addCanvas._id}`} />
       navigate(`/canvas/${data.addCanvas._id}`, {replace:true})
     } catch (err) {
       console.error(err);

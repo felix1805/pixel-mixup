@@ -4,13 +4,6 @@ import { useMutation } from '@apollo/client';
 import { DELETE_CANVAS } from '../../utils/mutations';
 import { QUERY_CANVASES } from '../../utils/queries';
 
-const styles = {
-  canvas: {
-    display: 'flex',
-    flexDirection: 'column',
-  }
-}
-
 const CanvasList = ({ canvases, isLoggedInUser = false }) => {
   const [deleteCanvas, { error }] = useMutation(DELETE_CANVAS, {
     update(cache, { data: { deleteCanvas } }) {

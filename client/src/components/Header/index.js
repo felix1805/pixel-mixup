@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
-import image from '../../../src/components/Header';
 
 const Header = () => {
   return (

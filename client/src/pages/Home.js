@@ -1,7 +1,6 @@
 // Node Modules
-import React, { useRef } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
 // Utilities
 import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_CANVASES } from '../utils/queries';
@@ -17,8 +16,6 @@ const Home = () => {
   const { loading: canvasLoading, data: canvasData } = useQuery(QUERY_CANVASES);
   const users = data?.users || [];
   const canvases = canvasData?.canvases || [];
-  const colorRef = useRef();
-
 
   const renderUserList = () => {
     if (loading || canvasLoading) {
